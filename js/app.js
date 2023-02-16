@@ -46,3 +46,23 @@ document.getElementById('calculator').addEventListener('click',function(event){
     typedNumbers.value = currentNumbers ;
    }
 })
+// ------------
+document.getElementById('varify-pin').addEventListener('click',function(){
+    const displayPin = document.getElementById('display-pin');
+    const displayPinValue = displayPin.value ;
+
+    const typedNumbers = document.getElementById('typed-numbers');
+    const typedNumbersValue = typedNumbers.value;
+    typedNumbers.value = '';
+
+    const pinSuccess = document.getElementById('pin-success');
+    const pinFailure = document.getElementById('pin-failure');
+    if(displayPinValue === typedNumbersValue){
+        pinSuccess.style.display = 'block';
+        pinFailure.style.display = 'none';
+    }
+    else{
+        pinFailure.style.display = 'block';
+        pinSuccess.style.display = 'none';
+    }
+})
